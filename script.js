@@ -14,9 +14,9 @@
 
 //==[ 1. BASIC INFO ]==
 
-let blogName = "Blog sitestarsweb";
-let authorName = "sitestarsweb";
-let authorLink = "https://sitestarsweb.github.io/"; // Enter your website, social media, etc. Some way for people to tell you they like your blog! (Leaving it empty is okay too)
+let blogName = "Galatic Net Work";
+let authorName = "Galatic Net Work";
+let authorLink = "https://galaticnetwork.github.io"; // Enter your website, social media, etc. Some way for people to tell you they like your blog! (Leaving it empty is okay too)
 
 //-----------------------------
 
