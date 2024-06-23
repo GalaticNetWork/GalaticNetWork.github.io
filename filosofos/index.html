@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas de Filósofos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .philosopher-card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            text-align: center;
+        }
+        .philosopher-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .philosopher-card h2 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+        .philosopher-card h3 {
+            margin: 10px 0;
+            font-size: 20px;
+            color: #555;
+        }
+        .philosopher-card p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .quote {
+            font-style: italic;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="philosopher-card" id="philosopher-card">
+        <!-- Contenido generado por JavaScript -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const philosopherCard = document.getElementById('philosopher-card');
+
+            const philosophers = [
+                {
+                    "title": "Sócrates",
+                    "image": "socrates.jpg",
+                    "birthDate": "469-06-04",
+                    "deathDate": "399-04-01",
+                    "works": ["Apología", "Critón", "Fedón"],
+                    "quotes": [
+                        "La vida no examinada no merece ser vivida.",
+                        "Conócete a ti mismo."
+                    ]
+                },
+                {
+                    "title": "Platón",
+                    "image": "plato.jpg",
+                    "birthDate": "428-05-21",
+                    "deathDate": "348-03-07",
+                    "works": ["La República", "Fedón", "El Banquete"],
+                    "quotes": [
+                        "El hombre es un ser en busca de sentido.",
+                        "La mayor declaración de amor es la que no se hace; el hombre que siente mucho, habla poco."
+                    ]
+                }
+            ];
+
+            const today = new Date().toISOString().slice(5, 10);
+
+            const philosopher = philosophers.find(phil => phil.birthDate.slice(5, 10) === today || phil.deathDate.slice(5, 10) === today);
+
+            if (philosopher) {
+                philosopherCard.innerHTML = `
+                    <img src="${philosopher.image}" alt="${philosopher.title}">
+                    <h2>${philosopher.title}</h2>
+                    <h3>Obras</h3>
+                    <p>${philosopher.works.join(', ')}</p>
+                    <h3>Citas</h3>
+                    <p class="quote">${philosopher.quotes.join('<br><br>')}</p>
+                `;
+            } else {
+                philosopherCard.innerHTML = '<p>No hay filósofos para mostrar hoy.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
