@@ -80,7 +80,7 @@
 			sTitulo=sDatos.substring(sDatos.indexOf('<title>', iCont)+7, sDatos.indexOf('</title>', iCont));
 			sLink=sDatos.substring(sDatos.indexOf('<link>', iCont)+6, sDatos.indexOf('</link>', iCont));
 			sDescription=sDatos.substring(sDatos.indexOf('<description>', iCont)+0, sDatos.indexOf('</description>', iCont));
-			document.write('<br><img src="5.png" width="40” height="40” alt="google underground"/><a href="' + sLink + '" target="_blank">' + sTitulo + '</a><br><p>' + sDescription + '');
+			document.write('<br><img src="https://webunderground.neocities.org/google/site/clubsite/icons/youtobe.png" width="40” height="40” alt="google underground"/><a href="' + sLink + '" target="_blank">' + sTitulo + '</a><br><p>' + sDescription + '');
 			iCont=sDatos.indexOf('<item>', iCont+1);
 		}
 	}
