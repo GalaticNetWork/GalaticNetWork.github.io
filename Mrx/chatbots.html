@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot de IA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .chat-container {
+            width: 400px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .chat-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .chat-messages {
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+        }
+        .chat-input {
+            display: flex;
+            padding: 10px;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+        .chat-input button {
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            Chatbot de IA
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <!-- Mensajes aparecerán aquí -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Escribe tu pregunta...">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        const messagesContainer = document.getElementById('chat-messages');
+
+        const responses = {
+            "OpenAI": "OpenAI es una organización de investigación en inteligencia artificial que promueve y desarrolla IA amigable de tal manera que beneficie a la humanidad en su conjunto.",
+            "DeepMind": "DeepMind es una empresa de inteligencia artificial que se especializa en la investigación y aplicación de IA avanzada.",
+            "IBM Watson": "IBM Watson es una tecnología de inteligencia artificial desarrollada por IBM que puede analizar grandes volúmenes de datos y proporcionar respuestas precisas.",
+            "Google AI": "Google AI es la división de Google dedicada a la investigación y desarrollo de tecnologías de inteligencia artificial.",
+            "Microsoft AI": "Microsoft AI ofrece una amplia gama de servicios de inteligencia artificial para desarrolladores y empresas."
+        };
+
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            if (userInput.trim() === "") return;
+
+            appendMessage('Usuario', userInput);
+            document.getElementById('user-input').value = '';
+
+            const response = responses[userInput] || "Lo siento, no tengo información sobre eso.";
+            setTimeout(() => appendMessage('Chatbot', response), 500);
+        }
+
+        function appendMessage(sender, message) {
+            const messageElement = document.createElement('div');
+            messageElement.className = 'message';
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            messagesContainer.appendChild(messageElement);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>
