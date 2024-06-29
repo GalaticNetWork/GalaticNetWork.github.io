@@ -43,6 +43,49 @@
             <h2>Sobre Mrt X</h2>
             <p>Mrt X es un Youtuber dedicado a proporcionar consejos sobre superación personal utilizando la tecnología de inteligencia artificial. A través de sus videos y chats interactivos, ayuda a las personas a alcanzar sus metas y mejorar sus vidas.</p>
         </section>
+        <section>
+            <h2>Noticias</h2>
+<script language="Javascript">
+	function GetRSS (psUrl)
+	{
+		var oHttp=false;
+		/*@cc_on @*/
+		/*@if (@_jscript_version>=5)
+		{
+			var asParsers=['Msxml2.XMLHTTP.5.0', 'Msxml2.XMLHTTP.4.0', 
+				'Msxml2.XMLHTTP.3.0', 'Msxml2.XMLHTTP', 'Microsoft.XMLHTTP'];
+			for (var iCont=0; ((!oHttp) && (iCont<asParsers.length)); iCont++)
+			{
+				try
+				{
+					oHttp=new ActiveXObject(asParsers[iCont]);
+				}
+			    catch(e)
+				{
+					oHttp=false;
+				}
+			}
+		}
+		@end @*/
+		if ((!oHttp) && (typeof XMLHttpRequest!='undefined'))
+		{
+			oHttp=new XMLHttpRequest();
+		}
+		oHttp.open('GET', psUrl, false);
+		oHttp.send(null);
+		sDatos=oHttp.responseText + ' ';
+		iCont=sDatos.indexOf('<item>', 0);
+		while (iCont!=-1)
+		{
+			sTitulo=sDatos.substring(sDatos.indexOf('<title>', iCont)+7, sDatos.indexOf('</title>', iCont));
+			sLink=sDatos.substring(sDatos.indexOf('<link>', iCont)+6, sDatos.indexOf('</link>', iCont));
+			sDescription=sDatos.substring(sDatos.indexOf('<description>', iCont)+0, sDatos.indexOf('</description>', iCont));
+			document.write('<br><img src="5.png" width="40” height="40” alt="google underground"/><a href="' + sLink + '" target="_blank">' + sTitulo + '</a><br><p>' + sDescription + '');
+			iCont=sDatos.indexOf('<item>', iCont+1);
+		}
+	}
+</script>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 Mrt X. Todos los derechos reservados.</p>
