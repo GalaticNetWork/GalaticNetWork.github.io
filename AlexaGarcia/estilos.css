@@ -1,7 +1,7 @@
 body {
-    background-color: #f8f9fa;
-    color: #404040;
-    font-family: 'Arial', sans-serif;
+    background-color: #f3f3f3;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -9,15 +9,15 @@ body {
 header {
     text-align: center;
     padding: 20px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #e5e5e5;
+    background-color: #0078d7;
+    color: #ffffff;
 }
 
 .foto-redonda {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 2px solid #d1d1d1;
+    border: 2px solid #ffffff;
 }
 
 nav ul {
@@ -25,7 +25,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    background-color: #f8f9fa;
+    background-color: #e6e6e6;
     margin: 0;
 }
 
@@ -34,7 +34,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #0066cc;
+    color: #0078d7;
     text-decoration: none;
     font-weight: bold;
 }
@@ -45,12 +45,14 @@ nav ul li a:hover {
 
 main {
     padding: 20px;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 h2 {
-    color: #0066cc;
+    color: #0078d7;
+    border-bottom: 2px solid #0078d7;
+    padding-bottom: 5px;
 }
 
 ul {
@@ -63,7 +65,7 @@ ul li {
 }
 
 ul li a {
-    color: #0066cc;
+    color: #0078d7;
     text-decoration: none;
 }
 
@@ -74,6 +76,6 @@ ul li a:hover {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #ffffff;
-    border-top: 1px solid #e5e5e5;
+    background-color: #0078d7;
+    color: #ffffff;
 }
