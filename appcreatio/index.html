@@ -4,55 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AppCreatio: Aprende a crear aplicaciones móviles con App Inventor y Apache Cordova">
-    <title>AppCreatioM</title>
+    <title>AppCreatio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #000;
+            color: #0ff;
         }
         header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1em 0;
+            background-color: #111;
+            color: #0ff;
+            padding: 1.5em 0;
             text-align: center;
+            border-bottom: 3px solid #0ff;
+            position: relative;
+        }
+        header img {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
         }
         nav {
-            background-color: #333;
+            background-color: #222;
             overflow: hidden;
+            border-bottom: 2px solid #0ff;
         }
         nav a {
-            color: white;
+            color: #0ff;
             text-decoration: none;
             padding: 14px 20px;
             display: inline-block;
         }
         nav a:hover {
-            background-color: #575757;
+            background-color: #333;
         }
         section {
             padding: 20px;
+            border-bottom: 2px solid #0ff;
         }
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #111;
+            color: #0ff;
             text-align: center;
             padding: 10px;
-            margin-top: 20px;
         }
         .section-title {
-            color: #4CAF50;
-            font-size: 1.5em;
+            color: #ff0;
+            font-size: 1.8em;
             margin-bottom: 10px;
+        }
+        .social {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .social img {
+            width: 30px;
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
 
 <header>
+    <img src="logo.png" alt="AppCreatio Logo">
     <h1>AppCreatio</h1>
     <p>Explora el arte de crear aplicaciones móviles</p>
+    <div class="social">
+        <a href="https://youtube.com" target="_blank">
+            <img src="youtube-icon.png" alt="YouTube">
+        </a>
+    </div>
 </header>
 
 <nav>
@@ -109,7 +136,7 @@
 </section>
 
 <footer>
-    <p>&copy; 2025 AppCreatioM. Todos los derechos reservados.</p>
+    <p>&copy; 2025 AppCreatio. Todos los derechos reservados.</p>
 </footer>
 
 </body>
